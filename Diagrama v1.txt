@@ -1,0 +1,67 @@
+@startuml
+package QueMePongo <<Rectangle>> {
+
+package Prendas <<Frame>> {
+
+class Prenda {
+material
+colorPrincipal
+colorSecundario
+
+String categoria()
+}
+
+interface Tipo {
+}
+
+package Tipos <<Frame>> {
+
+class Pantalon{
+}
+
+class Zapato {
+}
+
+class Camisa {
+}
+
+class Collar {
+}
+}
+
+class ParteSuperior {
+String categoria()
+}
+
+class ParteInferior {
+String categoria()
+}
+
+class Calzado {
+String categoria()
+}
+
+class Accesorio {
+String categoria()
+}
+
+}
+
+class Atuendo {
+}
+}
+
+Atuendo --> "*" Prenda
+
+Prenda --> Tipo
+
+Pantalon  ..|> Tipo
+Camisa    ..|> Tipo
+Collar    ..|> Tipo
+Zapato    ..|> Tipo
+
+ParteSuperior   <|-- Camisa
+ParteInferior   <|-- Pantalon
+Calzado         <|-- Zapato
+Accesorio       <|-- Collar
+@enduml

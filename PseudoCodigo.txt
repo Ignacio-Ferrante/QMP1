@@ -1,0 +1,56 @@
+class Atuendo {
+    Prenda parteSuperior
+    Prenda parteInferior
+    Prenda calzado
+    Prenda accesorio
+}
+
+class Prenda {
+    material
+    colorPrincipal
+    colorSecundario = "No existe"
+    Tipo Tipo
+
+    String categoria() {
+        tipo.categoria()
+    }
+    
+    Prenda(tipoDePrenda, material, colorPrincipal, colorSecundario) {
+        this.tipo = tipoDePrenda
+        this.material = material
+        this.colorPrincipal = colorPrincipal
+        this.colorSecundario = colorSecundario
+    }
+}
+
+interface Tipo {
+
+}
+
+class Pantalon extends ParteInferior{
+}
+
+class Zapato extends Calzado{
+}
+
+class Camisa extends ParteSuperior{
+}
+
+class Collar extends Accesorio{
+}
+
+class ParteSuperior implements Tipo{
+    String categoria() {return "Parte Superior"}
+}
+
+class ParteInferior implements Tipo{
+    String categoria() {return "Parte Inferior"}
+}
+
+class Calzado implements Tipo{
+    String categoria() {return "Calzado"}
+}
+
+class Accesorio implements Tipo{
+    String categoria() {return "Accesorio"}
+}
